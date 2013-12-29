@@ -156,7 +156,6 @@ public class MessagingPreferenceActivity extends PreferenceActivity
     // sure we notice if the user has changed the default SMS app.
     private boolean mIsSmsEnabled;
 
-<<<<<<< HEAD
     // QuickMessage
     private CheckBoxPreference mEnableQuickMessagePref;
     private CheckBoxPreference mEnableQmLockscreenPref;
@@ -165,11 +164,10 @@ public class MessagingPreferenceActivity extends PreferenceActivity
 
     // Blacklist
     private PreferenceScreen mBlacklist;
-=======
+
     // MMS User Agent
     public static final String USER_AGENT               = "pref_key_mms_user_agent";
     public static final String USER_AGENT_CUSTOM        = "pref_key_mms_user_agent_custom";
->>>>>>> 31135ed... Add Custom MMS User-Agent configuration option
 
     @Override
     protected void onCreate(Bundle icicle) {
