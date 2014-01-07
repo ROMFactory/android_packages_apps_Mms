@@ -9,13 +9,10 @@
  * PURPOSE. See W3C License http://www.w3.org/Consortium/Legal/ for more
  * details.
  */
-
 package org.w3c.dom.smil;
-
 /**
- *  Declares layout properties for the top-layout element. See the  top-layout 
- * element definition . 
+ *  Declares layout properties for the top-layout element. See the  top-layout
+ * element definition .
  */
 public interface SMILTopLayoutElement extends SMILElement, ElementLayout {
 }
-

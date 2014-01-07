@@ -45,6 +45,7 @@ import android.util.Log;
 
 import com.android.mms.LogTag;
 import com.android.mms.MmsConfig;
+import com.android.mms.ui.MessagingPreferenceActivity;
 
 public class HttpUtils {
     private static final String TAG = LogTag.TRANSACTION;

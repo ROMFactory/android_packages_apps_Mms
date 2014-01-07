@@ -41,8 +41,8 @@ public class SmilDocumentImpl extends DocumentImpl implements SMILDocument, Docu
      */
     ElementSequentialTimeContainer mSeqTimeContainer;
 
-    public final static String SMIL_DOCUMENT_START_EVENT = "SmilDocumentStart";
-    public final static String SMIL_DOCUMENT_END_EVENT = "SimlDocumentEnd";
+    public static final String SMIL_DOCUMENT_START_EVENT = "SmilDocumentStart";
+    public static final String SMIL_DOCUMENT_END_EVENT = "SimlDocumentEnd";
 
     /*
      * Internal methods
@@ -155,9 +155,9 @@ public class SmilDocumentImpl extends DocumentImpl implements SMILDocument, Docu
     public Element createElement(String tagName) throws DOMException {
         // Find the appropriate class for this element
         tagName = tagName.toLowerCase();
-        if (tagName.equals("text") ||
-                tagName.equals("img") ||
-                tagName.equals("video")) {
+        if (tagName.equals("text") 
+                || tagName.equals("img")
+                || tagName.equals("video")) {
             return new SmilRegionMediaElementImpl(this, tagName);
         } else if (tagName.equals("audio")) {
             return new SmilMediaElementImpl(this, tagName);

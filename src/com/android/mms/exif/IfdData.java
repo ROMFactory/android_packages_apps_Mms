@@ -47,7 +47,7 @@ class IfdData {
         mIfdId = ifdId;
     }
 
-    static protected int[] getIfds() {
+    protected static int[] getIfds() {
         return sIfds;
     }
 

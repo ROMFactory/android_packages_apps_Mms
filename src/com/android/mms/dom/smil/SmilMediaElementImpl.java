@@ -30,18 +30,18 @@ import com.android.mms.dom.events.EventImpl;
 
 public class SmilMediaElementImpl extends SmilElementImpl implements
         SMILMediaElement {
-    public final static String SMIL_MEDIA_START_EVENT = "SmilMediaStart";
-    public final static String SMIL_MEDIA_END_EVENT = "SmilMediaEnd";
-    public final static String SMIL_MEDIA_PAUSE_EVENT = "SmilMediaPause";
-    public final static String SMIL_MEDIA_SEEK_EVENT = "SmilMediaSeek";
-    private final static String TAG = "Mms:smil";
+    public static final String SMIL_MEDIA_START_EVENT = "SmilMediaStart";
+    public static final String SMIL_MEDIA_END_EVENT = "SmilMediaEnd";
+    public static final String SMIL_MEDIA_PAUSE_EVENT = "SmilMediaPause";
+    public static final String SMIL_MEDIA_SEEK_EVENT = "SmilMediaSeek";
+    private static final String TAG = "Mms:smil";
     private static final boolean DEBUG = false;
     private static final boolean LOCAL_LOGV = false;
 
     ElementTime mElementTime = new ElementTimeImpl(this) {
             private Event createEvent(String eventType) {
                 DocumentEvent doc =
-                    (DocumentEvent)SmilMediaElementImpl.this.getOwnerDocument();
+                    (DocumentEvent) SmilMediaElementImpl.this.getOwnerDocument();
                 Event event = doc.createEvent("Event");
                 event.initEvent(eventType, false, false);
                 if (LOCAL_LOGV) {
@@ -55,7 +55,7 @@ public class SmilMediaElementImpl extends SmilElementImpl implements
 
             private Event createEvent(String eventType, int seekTo) {
                 DocumentEvent doc =
-                    (DocumentEvent)SmilMediaElementImpl.this.getOwnerDocument();
+                    (DocumentEvent) SmilMediaElementImpl.this.getOwnerDocument();
                 EventImpl event = (EventImpl) doc.createEvent("Event");
                 event.initEvent(eventType, false, false, seekTo);
                 if (LOCAL_LOGV) {
