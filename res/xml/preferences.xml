@@ -50,59 +50,7 @@
             android:title="@string/pref_mms_clear_search_history_title"
             android:summary="@string/pref_mms_clear_search_history_summary" />
 -->
-<<<<<<< HEAD
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_key_auto_delete"
-            android:summary="@string/pref_summary_auto_delete"
-            android:title="@string/pref_title_auto_delete" />
 
-        <Preference
-            android:key="pref_key_sms_delete_limit"
-            android:dependency="pref_key_auto_delete"
-            android:persistent="false"
-            android:summary="@string/pref_summary_delete_limit"
-            android:title="@string/pref_title_sms_delete" />
-
-        <Preference
-            android:key="pref_key_mms_delete_limit"
-            android:dependency="pref_key_auto_delete"
-            android:persistent="false"
-            android:summary="@string/pref_summary_delete_limit"
-            android:title="@string/pref_title_mms_delete" />
-    </PreferenceCategory>
-
-    <!-- SMS Settings -->
-    <PreferenceCategory android:title="@string/pref_sms_settings_title"
-        android:key="pref_key_sms_settings" >
-
-        <ListPreference
-            android:key="pref_key_send_delay"
-            android:persistent="true"
-            android:dialogTitle="@string/pref_title_send_delay"
-            android:title="@string/pref_title_send_delay"
-            android:entries="@array/send_delay_duration_entries"
-            android:entryValues="@array/send_delay_duration_values"
-            android:defaultValue="0"/>
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_key_sms_delivery_reports"
-            android:summary="@string/pref_summary_sms_delivery_reports"
-            android:title="@string/pref_title_sms_delivery_reports" />
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_key_sms_split_counter"
-            android:summary="@string/pref_summary_sms_split_counter"
-            android:title="@string/pref_title_sms_split_counter" />
-
-        <Preference
-            android:key="pref_key_manage_sim_messages"
-            android:summary="@string/pref_summary_manage_sim_messages"
-            android:title="@string/pref_title_manage_sim_messages" />
-    </PreferenceCategory>
-=======
      <CheckBoxPreference android:defaultValue="false"
                       android:key="pref_key_auto_delete"
                       android:summary="@string/pref_summary_auto_delete"
@@ -120,6 +68,15 @@
   </PreferenceCategory>
   <PreferenceCategory android:title="@string/pref_sms_settings_title"
                       android:key="pref_key_sms_settings" >
+       <ListPreference
+            android:key="pref_key_send_delay"
+            android:persistent="true"
+            android:dialogTitle="@string/pref_title_send_delay"
+            android:title="@string/pref_title_send_delay"
+            android:entries="@array/send_delay_duration_entries"
+            android:entryValues="@array/send_delay_duration_values"
+            android:defaultValue="0"/>
+
     <CheckBoxPreference android:defaultValue="false"
                       android:key="pref_key_sms_delivery_reports"
                       android:summary="@string/pref_summary_sms_delivery_reports"
@@ -168,77 +125,6 @@
                         android:dependency="pref_key_enable_notifications"
                         android:defaultValue="false" />
   </PreferenceCategory>
->>>>>>> 31135ed... Add Custom MMS User-Agent configuration option
-
-    <!-- MMS Settings -->
-    <PreferenceCategory android:title="@string/pref_mms_settings_title"
-        android:key="pref_key_mms_settings">
-
-<<<<<<< HEAD
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="pref_key_mms_group_mms"
-            android:summary="@string/pref_summary_mms_group_mms"
-            android:title="@string/pref_title_mms_group_mms" />
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_key_mms_delivery_reports"
-            android:summary="@string/pref_summary_mms_delivery_reports"
-            android:title="@string/pref_title_mms_delivery_reports" />
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_key_mms_read_reports"
-            android:summary="@string/pref_summary_mms_read_reports"
-            android:title="@string/pref_title_mms_read_reports" />
-
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="pref_key_mms_auto_retrieval"
-            android:title="@string/pref_title_mms_auto_retrieval"
-            android:summary="@string/pref_summary_mms_auto_retrieval" />
-
-        <CheckBoxPreference
-            android:layout="?android:attr/preferenceLayoutChild"
-            android:dependency="pref_key_mms_auto_retrieval"
-            android:defaultValue="false"
-            android:key="pref_key_mms_retrieval_during_roaming"
-            android:title="@string/pref_title_mms_retrieval_during_roaming"
-            android:summary="@string/pref_summary_mms_retrieval_during_roaming" />
-    </PreferenceCategory>
-
-    <!-- Notification Settings -->
-    <PreferenceCategory android:title="@string/pref_notification_settings_title"
-            android:key="pref_key_notification_settings" >
-
-        <CheckBoxPreference
-            android:key="pref_key_enable_notifications"
-            android:title="@string/pref_title_notification_enabled"
-            android:defaultValue="true" />
-
-       <CheckBoxPreference
-            android:key="pref_key_enable_privacy_mode"
-            android:layout="?android:attr/preferenceLayoutChild"
-            android:dependency="pref_key_enable_notifications"
-            android:defaultValue="false"
-            android:title="@string/pref_title_notification_privacy_mode_enabled"
-            android:summary="@string/pref_summary_notification_privacy_mode_enabled" />
-
-
-        <RingtonePreference
-            android:key="pref_key_ringtone"
-            android:title="@string/pref_title_notification_ringtone"
-            android:ringtoneType="notification"
-            android:dependency="pref_key_enable_notifications"
-            android:defaultValue="content://settings/system/notification_sound" />
-
-        <CheckBoxPreference
-            android:key="pref_key_vibrate"
-            android:title="@string/pref_title_notification_vibrateWhen"
-            android:dependency="pref_key_enable_notifications"
-            android:defaultValue="false" />
-    </PreferenceCategory>
 
     <!-- QuickMessage settings -->
     <PreferenceCategory android:title="@string/pref_quickmessage">
@@ -329,7 +215,7 @@
             android:title="@string/pref_title_input_type"
             android:entries="@array/pref_entries_input_type"
             android:entryValues="@array/pref_values_input_type" />
-=======
+
         <com.android.mms.preferences.CustomUserAgentListPreference
             android:key="pref_key_mms_user_agent"
             android:defaultValue="default"
@@ -339,6 +225,5 @@
             android:entryValues="@array/pref_mms_user_agent_values"
             android:dialogTitle="@string/pref_title_mms_user_agent" />
 
->>>>>>> 31135ed... Add Custom MMS User-Agent configuration option
     </PreferenceCategory>
 </PreferenceScreen>
