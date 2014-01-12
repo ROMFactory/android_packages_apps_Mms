@@ -296,8 +296,8 @@ public class ExifParser {
                 int offsetSize = 4;
                 // Some camera models use invalid length of the offset
                 if (mCorrespondingEvent.size() > 0) {
-                    offsetSize = mCorrespondingEvent.firstEntry().getKey()
-                            - mTiffStream.getReadByteCount();
+                    offsetSize = mCorrespondingEvent.firstEntry().getKey() -
+                            mTiffStream.getReadByteCount();
                 }
                 if (offsetSize < 4) {
                     Log.w(TAG, "Invalid size of link to next IFD: " + offsetSize);
@@ -315,9 +315,8 @@ public class ExifParser {
             try {
                 skipTo(entry.getKey());
             } catch (IOException e) {
-                Log.w(TAG, "Failed to skip to data at: " + entry.getKey()
-                        +" for " + event.getClass().getName()
-                        + ", the file may be broken.");
+                Log.w(TAG, "Failed to skip to data at: " + entry.getKey() +
+                        " for " + event.getClass().getName() + ", the file may be broken.");
                 continue;
             }
             if (event instanceof IfdEvent) {

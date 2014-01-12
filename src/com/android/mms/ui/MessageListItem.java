@@ -63,11 +63,8 @@ import com.android.mms.R;
 import com.android.mms.data.Contact;
 import com.android.mms.data.WorkingMessage;
 import com.android.mms.model.SlideModel;
-<<<<<<< HEAD
 import com.android.mms.model.SlideshowModel;
 import com.android.mms.transaction.SmsReceiverService;
-=======
->>>>>>> d663c65... MMS: Fixed using checkstyle
 import com.android.mms.transaction.Transaction;
 import com.android.mms.transaction.TransactionBundle;
 import com.android.mms.transaction.TransactionService;

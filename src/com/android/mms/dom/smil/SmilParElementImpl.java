@@ -30,8 +30,8 @@ import org.w3c.dom.smil.Time;
 import org.w3c.dom.smil.TimeList;
 
 public class SmilParElementImpl extends SmilElementImpl implements SMILParElement {
-    public static final String SMIL_SLIDE_START_EVENT = "SmilSlideStart";
-    public static final String SMIL_SLIDE_END_EVENT = "SmilSlideEnd";
+    public final static String SMIL_SLIDE_START_EVENT = "SmilSlideStart";
+    public final static String SMIL_SLIDE_END_EVENT = "SmilSlideEnd";
 
     ElementParallelTimeContainer mParTimeContainer =
         new ElementParallelTimeContainerImpl(this) {
@@ -94,7 +94,8 @@ public class SmilParElementImpl extends SmilElementImpl implements SMILParElemen
      * Internal Interface
      */
 
-    SmilParElementImpl(SmilDocumentImpl owner, String tagName) {
+    SmilParElementImpl(SmilDocumentImpl owner, String tagName)
+    {
         super(owner, tagName.toUpperCase());
     }
 

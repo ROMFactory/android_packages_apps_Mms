@@ -79,7 +79,7 @@ public class TimeImpl implements Time {
          */
         // Will throw NullPointerException if timeValue is null
         if (timeValue.equals("indefinite")
-                && ((constraints & ALLOW_INDEFINITE_VALUE) != 0)) {
+                && ((constraints & ALLOW_INDEFINITE_VALUE) != 0) ) {
             mTimeType = SMIL_TIME_INDEFINITE;
         } else if ((constraints & ALLOW_OFFSET_VALUE) != 0) {
             int sign = 1;
@@ -89,7 +89,7 @@ public class TimeImpl implements Time {
                 timeValue = timeValue.substring(1);
                 sign = -1;
             }
-            mResolvedOffset = sign * parseClockValue(timeValue) / 1000.0;
+            mResolvedOffset = sign*parseClockValue(timeValue)/1000.0;
             mResolved = true;
             mTimeType = SMIL_TIME_OFFSET;
         } else {
@@ -138,11 +138,11 @@ public class TimeImpl implements Time {
             if (clockValue.endsWith("ms")) {
                 result = parseFloat(clockValue, 2, true);
             } else if (clockValue.endsWith("s")) {
-                result = 1000 * parseFloat(clockValue, 1, true);
+                result = 1000*parseFloat(clockValue, 1, true);
             } else if (clockValue.endsWith("min")) {
-                result = 60000 * parseFloat(clockValue, 3, true);
+                result = 60000*parseFloat(clockValue, 3, true);
             } else if (clockValue.endsWith("h")) {
-                result = 3600000 * parseFloat(clockValue, 1, true);
+                result = 3600000*parseFloat(clockValue, 1, true);
             } else {
                 // Handle Timecount-val without metric
                 try {
@@ -159,16 +159,16 @@ public class TimeImpl implements Time {
                 if (timeValues.length == 2) {
                     indexOfMinutes = 0;
                 } else if (timeValues.length == 3) {
-                    result = 3600000 * (int) parseFloat(timeValues[0], 0, false);
+                    result = 3600000*(int)parseFloat(timeValues[0], 0, false);
                     indexOfMinutes = 1;
                 } else {
                     throw new IllegalArgumentException();
                 }
 
                 // Read Minutes
-                int minutes = (int) parseFloat(timeValues[indexOfMinutes], 0, false);
+                int minutes = (int)parseFloat(timeValues[indexOfMinutes], 0, false);
                 if ((minutes >= 00) && (minutes <= 59)) {
-                    result += 60000 * minutes;
+                    result += 60000*minutes;
                 } else {
                     throw new IllegalArgumentException();
                 }
@@ -176,7 +176,7 @@ public class TimeImpl implements Time {
                 // Read Seconds
                 float seconds = parseFloat(timeValues[indexOfMinutes + 1], 0, true);
                 if ((seconds >= 00) && (seconds < 60)) {
-                    result += 60000 * seconds;
+                    result += 60000*seconds;
                 } else {
                     throw new IllegalArgumentException();
                 }
@@ -219,7 +219,7 @@ public class TimeImpl implements Time {
             // Read value up to 3 decimals and cut the rest
             result = Float.parseFloat(value.substring(0, indexOfComma));
             result += Float.parseFloat(
-                    value.substring(indexOfComma + 1, indexOfComma + 4)) / 1000;
+                    value.substring(indexOfComma + 1, indexOfComma + 4))/1000;
         } else {
             result = Integer.parseInt(value);
         }

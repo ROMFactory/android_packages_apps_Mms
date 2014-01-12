@@ -61,9 +61,9 @@ public class SmilContentHandler extends DefaultHandler {
         if (attributes != null) {
             for (int i = 0; i < attributes.getLength(); i++) {
                 if (LOCAL_LOGV) {
-                    Log.v(TAG, "Attribute " + i
-                        + " lname = " + attributes.getLocalName(i)
-                        + " value = " + attributes.getValue(i));
+                    Log.v(TAG, "Attribute " + i +
+                        " lname = " + attributes.getLocalName(i) +
+                        " value = " + attributes.getValue(i));
                 }
                 element.setAttribute(attributes.getLocalName(i),
                         attributes.getValue(i));

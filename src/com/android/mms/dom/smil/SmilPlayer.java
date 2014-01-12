@@ -416,7 +416,7 @@ public class SmilPlayer implements Runnable {
                     Log.v(TAG, "[SEEK]  " + " at " + mCurrentTime
                             + " " + element);
                 }
-                element.seekElement((float) (mCurrentTime - offset));
+                element.seekElement( (float) (mCurrentTime - offset) );
             }
         }
     }
@@ -440,9 +440,8 @@ public class SmilPlayer implements Runnable {
                 mCurrentTime += overhead;
             }
 
-            if (isStopAction() || isReloadAction()
-               || isPauseAction() || isNextAction()
-               || isPrevAction()) {
+            if (isStopAction() || isReloadAction() || isPauseAction() || isNextAction() ||
+                isPrevAction()) {
                 return;
             }
 
@@ -500,8 +499,8 @@ public class SmilPlayer implements Runnable {
 
     private synchronized void waitForWakeUp() {
         try {
-            while (!(isStartAction() || isStopAction() || isReloadAction() 
-                    || isNextAction() || isPrevAction())) {
+            while ( !(isStartAction() || isStopAction() || isReloadAction() ||
+                    isNextAction() || isPrevAction()) ) {
                 wait(TIMESLICE);
             }
             if (isStartAction()) {
@@ -553,8 +552,8 @@ public class SmilPlayer implements Runnable {
             // meeting the end of slide
             TimelineEntry entry = mAllEntries.get(i);
             int action = entry.getAction();
-            if (entry.getElement() instanceof SmilParElementImpl
-                    && action == TimelineEntry.ACTION_END) {
+            if (entry.getElement() instanceof SmilParElementImpl &&
+                    action == TimelineEntry.ACTION_END) {
                 actionEntry(entry);
                 mCurrentElement = i;
                 break;
@@ -574,7 +573,7 @@ public class SmilPlayer implements Runnable {
           if (isBeginOfSlide(entry)) {
               mCurrentElement = i;
               mCurrentSlide = i;
-              mCurrentTime = (long) (entry.getOffsetTime() * 1000);
+              mCurrentTime = (long)(entry.getOffsetTime() * 1000);
               return entry;
           }
       }
@@ -583,7 +582,7 @@ public class SmilPlayer implements Runnable {
       entry = null;
       if (mCurrentElement < totalEntries) {
           entry = mAllEntries.get(mCurrentElement);
-          mCurrentTime = (long) (entry.getOffsetTime() * 1000);
+          mCurrentTime = (long)(entry.getOffsetTime() * 1000);
       }
       return entry;
     }
@@ -595,10 +594,10 @@ public class SmilPlayer implements Runnable {
         TimelineEntry entry = mAllEntries.get(i);
         if (isBeginOfSlide(entry)) {
             latestBeginEntryIndex = i;
-          if (0 == skippedSlides--) {
+          if (0 == skippedSlides-- ) {
             mCurrentElement = i;
             mCurrentSlide = i;
-            mCurrentTime = (long) (entry.getOffsetTime() * 1000);
+            mCurrentTime = (long)(entry.getOffsetTime() * 1000);
             return entry;
           }
         }
@@ -663,8 +662,8 @@ public class SmilPlayer implements Runnable {
                     Log.e(TAG, "Unexpected InterruptedException.", e);
                 }
 
-                while (isPauseAction() || isStopAction() || isReloadAction() 
-                      || isNextAction() || isPrevAction()) {
+                while (isPauseAction() || isStopAction() || isReloadAction() || isNextAction() ||
+                    isPrevAction()) {
                     if (isPauseAction()) {
                         actionPause();
                         waitForWakeUp();
@@ -678,9 +677,8 @@ public class SmilPlayer implements Runnable {
                     if (isReloadAction()) {
                         actionReload();
                         entry = reloadCurrentEntry();
-                        if (entry == null) {
+                        if (entry == null)
                             return;
-                        }
                         if (isPausedState()) {
                             mAction = SmilPlayerAction.PAUSE;
                         }
@@ -723,8 +721,8 @@ public class SmilPlayer implements Runnable {
     }
 
     private static final class TimelineEntry {
-        static final int ACTION_BEGIN = 0;
-        static final int ACTION_END   = 1;
+        final static int ACTION_BEGIN = 0;
+        final static int ACTION_END   = 1;
 
         private final double mOffsetTime;
         private final ElementTime mElement;
@@ -756,7 +754,7 @@ public class SmilPlayer implements Runnable {
     private void dumpAllEntries() {
         if (LOCAL_LOGV) {
             for (TimelineEntry entry : mAllEntries) {
-                Log.v(TAG, "[Entry] " + entry);
+                Log.v(TAG, "[Entry] "+ entry);
             }
         }
     }

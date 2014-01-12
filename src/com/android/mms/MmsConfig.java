@@ -27,9 +27,12 @@ import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.internal.telephony.TelephonyProperties;
+import com.android.mms.ui.MessageUtils;
+import com.android.mms.ui.MessagingPreferenceActivity;
 
 public class MmsConfig {
     private static final String TAG = "MmsConfig";

@@ -117,10 +117,10 @@ public class ExifTag {
      * Returns true if a given type is a valid tag type.
      */
     public static boolean isValidType(short type) {
-        return type == TYPE_UNSIGNED_BYTE || type == TYPE_ASCII
-                || type == TYPE_UNSIGNED_SHORT || type == TYPE_UNSIGNED_LONG
-                || type == TYPE_UNSIGNED_RATIONAL || type == TYPE_UNDEFINED
-                || type == TYPE_LONG || type == TYPE_RATIONAL;
+        return type == TYPE_UNSIGNED_BYTE || type == TYPE_ASCII ||
+                type == TYPE_UNSIGNED_SHORT || type == TYPE_UNSIGNED_LONG ||
+                type == TYPE_UNSIGNED_RATIONAL || type == TYPE_UNDEFINED ||
+                type == TYPE_LONG || type == TYPE_RATIONAL;
     }
 
     // Use builtTag in ExifInterface instead of constructor.
@@ -237,8 +237,8 @@ public class ExifTag {
         if (checkBadComponentCount(value.length)) {
             return false;
         }
-        if (mDataType != TYPE_UNSIGNED_SHORT && mDataType != TYPE_LONG
-                && mDataType != TYPE_UNSIGNED_LONG) {
+        if (mDataType != TYPE_UNSIGNED_SHORT && mDataType != TYPE_LONG &&
+                mDataType != TYPE_UNSIGNED_LONG) {
             return false;
         }
         if (mDataType == TYPE_UNSIGNED_SHORT && checkOverflowForUnsignedShort(value)) {
@@ -335,7 +335,7 @@ public class ExifTag {
             finalBuf = (buf[buf.length - 1] == 0 || mDataType == TYPE_UNDEFINED) ? buf : Arrays
                 .copyOf(buf, buf.length + 1);
         } else if (mDataType == TYPE_ASCII && mComponentCountActual == 1) {
-            finalBuf = new byte[] {0};
+            finalBuf = new byte[] { 0 };
         }
         int count = finalBuf.length;
         if (checkBadComponentCount(count)) {

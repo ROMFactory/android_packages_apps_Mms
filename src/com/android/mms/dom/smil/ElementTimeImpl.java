@@ -204,11 +204,11 @@ public abstract class ElementTimeImpl implements ElementTime {
          *  - Otherwise, the element will have a fill behavior identical to that if it were
          *    specified as "remove".
          */
-        if (((mSmilElement.getAttribute("dur").length() == 0)
-                && (mSmilElement.getAttribute("end").length() == 0)
-                && (mSmilElement.getAttribute("repeatCount").length() == 0)
-                && (mSmilElement.getAttribute("repeatDur").length() == 0))
-                || beginAndEndAreZero()) {
+        if (((mSmilElement.getAttribute("dur").length() == 0) &&
+                (mSmilElement.getAttribute("end").length() == 0) &&
+                (mSmilElement.getAttribute("repeatCount").length() == 0) &&
+                (mSmilElement.getAttribute("repeatDur").length() == 0)) ||
+                beginAndEndAreZero()) {
             return FILL_FREEZE;
         } else {
             return FILL_REMOVE;
@@ -296,7 +296,7 @@ public abstract class ElementTimeImpl implements ElementTime {
     public void setDur(float dur) throws DOMException {
         // In SMIL 3.0, the dur could be a timecount-value which may contain fractions.
         // However, in MMS 1.3, the dur SHALL be expressed in integer milliseconds.
-        mSmilElement.setAttribute("dur", Integer.toString((int) (dur * 1000)) + "ms");
+        mSmilElement.setAttribute("dur", Integer.toString((int)(dur * 1000)) + "ms");
     }
 
     public void setEnd(TimeList end) throws DOMException {

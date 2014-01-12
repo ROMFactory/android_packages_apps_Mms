@@ -52,7 +52,7 @@ public abstract class NodeImpl implements Node, EventTarget {
      */
 
     public Node appendChild(Node newChild) throws DOMException {
-        ((NodeImpl) newChild).setParentNode(this);
+        ((NodeImpl)newChild).setParentNode(this);
         mChildNodes.remove(newChild);
         mChildNodes.add(newChild);
         return newChild;
@@ -76,7 +76,8 @@ public abstract class NodeImpl implements Node, EventTarget {
         Node firstChild = null;
         try {
             firstChild = mChildNodes.firstElement();
-        } catch (NoSuchElementException e) {
+        }
+        catch (NoSuchElementException e) {
             // Ignore and return null
         }
         return firstChild;
@@ -86,7 +87,8 @@ public abstract class NodeImpl implements Node, EventTarget {
         Node lastChild = null;
         try {
             lastChild = mChildNodes.lastElement();
-        } catch (NoSuchElementException e) {
+        }
+        catch (NoSuchElementException e) {
             // Ignore and return null
         }
         return lastChild;

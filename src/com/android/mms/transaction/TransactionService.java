@@ -40,6 +40,7 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Telephony.Mms;
 import android.provider.Telephony.MmsSms;
+import android.provider.Telephony.Mms.Sent;
 import android.provider.Telephony.MmsSms.PendingMessages;
 import android.text.TextUtils;
 import android.util.Log;

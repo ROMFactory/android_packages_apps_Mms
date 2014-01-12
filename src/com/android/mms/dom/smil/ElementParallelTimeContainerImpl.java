@@ -32,11 +32,11 @@ import com.android.mms.dom.NodeListImpl;
 
 public abstract class ElementParallelTimeContainerImpl extends ElementTimeContainerImpl
         implements ElementParallelTimeContainer {
-    private static final String ENDSYNC_ATTRIBUTE_NAME = "endsync";
-    private static final String ENDSYNC_FIRST = "first";
-    private static final String ENDSYNC_LAST  = "last";
-    private static final String ENDSYNC_ALL   = "all";
-    private static final String ENDSYNC_MEDIA = "media";
+    private final static String ENDSYNC_ATTRIBUTE_NAME = "endsync";
+    private final static String ENDSYNC_FIRST = "first";
+    private final static String ENDSYNC_LAST  = "last";
+    private final static String ENDSYNC_ALL   = "all";
+    private final static String ENDSYNC_MEDIA = "media";
 
     /*
      * Internal Interface
@@ -52,8 +52,8 @@ public abstract class ElementParallelTimeContainerImpl extends ElementTimeContai
             setEndSync(ENDSYNC_LAST);
             return ENDSYNC_LAST;
         }
-        if (ENDSYNC_FIRST.equals(endsync) || ENDSYNC_LAST.equals(endsync) 
-            || ENDSYNC_ALL.equals(endsync) || ENDSYNC_MEDIA.equals(endsync)) {
+        if (ENDSYNC_FIRST.equals(endsync) || ENDSYNC_LAST.equals(endsync) ||
+                ENDSYNC_ALL.equals(endsync) || ENDSYNC_MEDIA.equals(endsync)) {
             return endsync;
         }
 
@@ -64,8 +64,8 @@ public abstract class ElementParallelTimeContainerImpl extends ElementTimeContai
     }
 
     public void setEndSync(String endSync) throws DOMException {
-        if (ENDSYNC_FIRST.equals(endSync) || ENDSYNC_LAST.equals(endSync)
-            || ENDSYNC_ALL.equals(endSync) || ENDSYNC_MEDIA.equals(endSync)) {
+        if (ENDSYNC_FIRST.equals(endSync) || ENDSYNC_LAST.equals(endSync) ||
+                ENDSYNC_ALL.equals(endSync) || ENDSYNC_MEDIA.equals(endSync)) {
             mSmilElement.setAttribute(ENDSYNC_ATTRIBUTE_NAME, endSync);
         } else { // FIXME add the support for ID-Value and smil1.0-Id-value.
             throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
@@ -96,7 +96,7 @@ public abstract class ElementParallelTimeContainerImpl extends ElementTimeContai
                         return -1.0F;
                     }
                     if (endTime.getResolved()) {
-                        float end = (float) endTime.getResolvedOffset();
+                        float end = (float)endTime.getResolvedOffset();
                         dur = (end > dur) ? end : dur;
                     }
                 }

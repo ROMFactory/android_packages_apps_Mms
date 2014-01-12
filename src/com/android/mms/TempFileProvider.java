@@ -70,9 +70,8 @@ public class TempFileProvider extends ContentProvider {
             // make sure the path is valid and directories created for this file.
             File parentFile = file.getParentFile();
             if (!parentFile.exists() && !parentFile.mkdirs()) {
-                Log.e(TAG, "[TempFileProvider] tempStoreFd: " 
-                      + parentFile.getPath()
-                      + "does not exist!");
+                Log.e(TAG, "[TempFileProvider] tempStoreFd: " + parentFile.getPath() +
+                        "does not exist!");
                 return null;
             }
 
@@ -152,9 +151,8 @@ public class TempFileProvider extends ContentProvider {
         if (uniqueIdentifier == null) {
             uniqueIdentifier = "";
         }
-        File newTempFile = new File(getScrapPath(context, ".temp"
-                + uniqueIdentifier
-                + fileExtension));
+        File newTempFile = new File(getScrapPath(context, ".temp" + uniqueIdentifier +
+                fileExtension));
         File oldTempFile = new File(filePath);
         // remove any existing file before rename
         boolean deleted = newTempFile.delete();
