@@ -92,6 +92,9 @@
     <string name="pref_title_templates_show_gesture">Gesture</string>
     <string name="pref_summary_templates_show_gesture">Show gesture trace</string>
 
+    <!-- MMS Max size -->
+    <string name="pref_title_mms_size">Set MMS limit size (KB)</string>
+
     <!-- Gesture sensitivity -->
     <string name="pref_title_template_gestures_sensitivity">Gesture sensitivity</string>
 
@@ -123,15 +126,6 @@
     <!-- Settings item description for boolean SMS Split 160 characters setting -->
     <string name="pref_summary_sms_split_counter">Adds counter to message ex. (1/2)</string>
 
-
-    <!-- Vibrate pattern -->
-    <string name="pref_title_mms_notification_vibrate_pattern">Vibrate pattern</string>
-    <string name="pref_summary_mms_notification_vibrate_pattern">Change vibrate pattern</string>
-    <string name="pref_mms_notification_vibrate_normal">Normal</string>
-    <string name="pref_mms_notification_vibrate_med_vib">Medium vibrate</string>
-    <string name="pref_mms_notification_vibrate_long_vib">Long vibrate</string>
-    <string name="pref_mms_notification_vibrate_mult_short">Multiple short</string>
-    <string name="pref_mms_notification_vibrate_mult_long">Multiple long</string>
 
     <!-- Vibrate pattern -->
     <string name="pref_title_mms_notification_vibrate_pattern">Vibrate pattern</string>
